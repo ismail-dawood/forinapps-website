@@ -118,9 +118,9 @@ mb-16
 
 
 
- <p className="text-md font-bold uppercase tracking-[0.35em] text-orange-500">
+ <p className="text-md font-bold uppercase tracking-[0.35em] text-primary-600">   
               Why choose us
-            </p>
+            </p>   
 
 
 
