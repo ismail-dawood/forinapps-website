@@ -9,7 +9,7 @@ import Button from './ui/Button.jsx'
 const navLinks = [
   // { label: 'Our work', to: '/our-work' },
   { label: 'About us', to: '/about-us' },
-  //{ label: 'Contact us', to: '/contact-us' },
+  { label: 'Contact us', to: '/contact-us' },
 ]
 
 export default function Navbar() {
