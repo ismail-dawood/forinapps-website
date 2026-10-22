@@ -1,0 +1,60 @@
+
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+
+/**
+ * Purely presentational now — no longer listens for `window.load` itself.
+ * The parent (App.jsx) decides *when* it's mounted/unmounted via
+ * `useImagesReady`, for both the first visit and every route change.
+ * `duration` just drives the cosmetic progress-bar fill so it roughly
+ * tracks how long the parent is expected to keep it on screen.
+ */
+export default function Loader({ duration = 900 }) {
+  const [progress, setProgress] = useState(6)
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setProgress(96))
+    return () => cancelAnimationFrame(id)
+  }, [])
+
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } }}
+      className="fixed inset-0 z-[200] flex items-center justify-center bg-bg"
+    >
+      <motion.div
+        exit={{ y: '-100%', transition: { duration: 0.55, ease: [0.76, 0, 0.24, 1], delay: 0.05 } }}
+        className="absolute inset-0 bg-bg"
+      />
+
+      <div className="relative z-10 flex flex-col items-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.7 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-400 via-primary-500 to-primary-700 shadow-glow"
+        >
+          <span className="text-xl font-display font-extrabold text-white">F</span>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className="mt-5 text-[15px] font-display font-bold tracking-wide text-ink"
+        >
+          ForinApps
+        </motion.p>
+
+        <div className="mt-7 h-[3px] w-44 overflow-hidden rounded-full bg-primary-100">
+          <motion.div
+            className="h-full rounded-full bg-gradient-to-r from-primary-400 to-primary-600"
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: duration / 1000, ease: 'easeOut' }}
+          />
+        </div>
+      </div>
+    </motion.div>
+  )
+}

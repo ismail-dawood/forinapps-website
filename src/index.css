@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #FFAD7A #FBF4EE;
+}
+
+/* Required by Lenis (src/components/SmoothScroll.jsx) so its JS-driven
+   smoothing takes over from the native `scroll-behavior: smooth` above
+   instead of the two fighting each other. */
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  @apply font-body text-ink bg-bg antialiased;
+  overflow-x: clip;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display tracking-tight;
+}
+
+@layer utilities {
+  .container-app {
+    @apply max-w-container mx-auto px-6;
+  }
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-primary-700 bg-primary-50 px-3.5 py-1.5 rounded-full mb-5;
+  }
+  /* Note: button styling (.btn-primary/.btn-outline equivalents) now lives in
+     src/components/ui/Button.jsx as Tailwind strings, not here — having one
+     JS component own both markup and style keeps the hover animation and
+     the visual variant impossible to drift out of sync. */
+
+  /* Animated gradient text — used sparingly for hero/CTA emphasis words. */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient-x;
+    background-image: linear-gradient(90deg, #FF5A1F 0%, #FF7F42 25%, #E24913 50%, #FF7F42 75%, #FF5A1F 100%);
+  }
+
+  /* Cursor-follow radial glow, positioned via --x/--y custom props set from JS. */
+  .spotlight {
+    background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), rgba(255, 90, 31, 0.16), transparent 75%);
+  }
+
+  /* Faint dot-grid backdrop used behind hero/CTA content. */
+  .bg-grid-pattern {
+    background-image: radial-gradient(circle, rgba(23, 19, 15, 0.09) 1px, transparent 1px);
+    background-size: 26px 26px;
+  }
+
+  /* Diagonal shimmer sweep for skeleton/loading-style accents on dark cards. */
+  .bg-shimmer {
+    background-image: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.14) 50%, transparent 65%);
+    background-size: 200% 100%;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+/* Slim, on-brand scrollbar (Chromium + Firefox) instead of the default OS one. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF4EE;
+}
+::-webkit-scrollbar-thumb {
+  background: #FFAD7A;
+  border-radius: 999px;
+  border: 2px solid #FBF4EE;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF5A1F;
+}
+
+::selection {
+  background: #FFD0B3;
+}
+
+:focus-visible {
+  outline: 2px solid #FF5A1F;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
