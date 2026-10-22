@@ -37,13 +37,13 @@ export default function OurTeam() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-md font-bold uppercase tracking-[0.35em] text-orange-500">
+            <p className="text-md font-bold uppercase tracking-[0.35em] text-primary-500">
               Our Team
             </p>
 
             <h2 className="mt-4 text-3xl font-bold leading-tight text-gray-900 md:text-5xl">
               The people behind
-              <span className="text-orange-500">
+              <span className="text-primary-500">
                 {' '}great products
               </span>
             </h2>
