@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
@@ -52,7 +51,7 @@ const HeroVisual = () => {
         ${
           large
             ? 'fixed inset-0 z-[9999] h-screen w-screen bg-black'
-            : 'relative z-0 h-[70vh] w-[92%] rounded-tl-[35px] rounded-tr-[35px] shadow-[0_0_80px_#f97316] sm:h-[90vh] sm:w-[90%] sm:rounded-tl-[50px] sm:rounded-tr-[50px]'
+            : 'relative z-0 h-[70vh] w-[92%] rounded-tl-[35px] rounded-tr-[35px] shadow-[0_0_80px_rgba(37,99,235,0.7)] sm:h-[90vh] sm:w-[90%] sm:rounded-tl-[50px] sm:rounded-tr-[50px]'
         }
         overflow-hidden
       `}
@@ -132,10 +131,10 @@ const HeroVisual = () => {
             absolute bottom-5 right-5
             flex h-14 w-14
             items-center justify-center
-            bg-orange-500
+            bg-primary-500
             text-white
             backdrop-blur-md
-            ring-2 ring-orange-400
+            ring-2 ring-primary-400
             transition-transform
             active:scale-90
             sm:bg-white/20
@@ -164,4 +163,3 @@ const HeroVisual = () => {
 }
 
 export default HeroVisual
-
