@@ -19,7 +19,7 @@ export default {
           900: '#172554', //900: '#7E2C0F',
         },
         ink: {
-          DEFAULT: '#17130F',
+          DEFAULT: '#111827',  // DEFAULT: '#17130F',
           soft: '#423A34',
         },
         gray: {
