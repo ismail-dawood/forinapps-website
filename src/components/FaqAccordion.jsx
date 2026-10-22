@@ -38,7 +38,7 @@ export default function FaqAccordion() {
         {/* ============================================================= */}
 
         <FadeIn>
-          <span className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.35em] text-orange-500">
+          <span className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.35em] text-primary-500">
             <MessagesSquare size={15} />
             FAQ&apos;s
           </span>
@@ -142,11 +142,11 @@ export default function FaqAccordion() {
                     animate={{
                       rotate: isOpen ? 135 : 0,
                       backgroundColor: isOpen
-                        ? '#FF5A1F'
-                        : '#FFF3EC',
+                        ? '#2563EB'
+                        : '#EFF6FF',
                       color: isOpen
                         ? '#FFFFFF'
-                        : '#FF5A1F',
+                        : '#2563EB',
                     }}
                     transition={{
                       duration: 0.25,
