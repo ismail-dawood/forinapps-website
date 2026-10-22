@@ -7,7 +7,7 @@ import HeroVisual from './HeroVisual.jsx'
 const HEADLINE =
   'We build AI-powered mobile apps & custom software solutions that turn ideas into scalable digital products.'
 
-const ORANGE_TEXT = 'scalable digital products.'
+const HIGHLIGHT_TEXT = 'scalable digital products.'
 
 const wordContainer = {
   hidden: {},
@@ -123,7 +123,7 @@ export default function Hero() {
               variants={wordItem}
               className="inline-block text-primary-500 mb-1"
             >
-              {ORANGE_TEXT}
+              {HIGHLIGHT_TEXT}
             </motion.span>
           </span>
         </motion.h1>
