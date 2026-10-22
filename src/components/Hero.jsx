@@ -121,7 +121,7 @@ export default function Hero() {
           <span className="inline-block overflow-hidden pb-1  align-top">
             <motion.span
               variants={wordItem}
-              className="inline-block text-primary-500 mb-1"
+              className="inline-block text-primary-600 mb-1"
             >
               {HIGHLIGHT_TEXT}
             </motion.span>
