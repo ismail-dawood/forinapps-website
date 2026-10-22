@@ -58,13 +58,13 @@ export default function OurTeam() {
               className="
                 mt-7
                 rounded-full
-                bg-orange-500
+                bg-primary-500
                 px-6
                 py-3
                 font-semibold
                 text-white
                 shadow-lg
-                shadow-orange-200
+                shadow-primary-200
                 transition
                 hover:scale-105
               "
