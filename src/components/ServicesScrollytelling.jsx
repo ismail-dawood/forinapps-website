@@ -242,7 +242,7 @@ export default function ServicesScrollytelling() {
                 font-bold
                 uppercase
                 tracking-[0.35em]
-                text-orange-500
+                text-primary-500
                 sm:mb-4
               "
             >
