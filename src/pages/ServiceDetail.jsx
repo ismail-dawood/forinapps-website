@@ -404,14 +404,13 @@ export default function ServiceDetail() {
                   </p>
 
                   <div className="mt-7">
-                    <Button
+                    <Link
                       to="/contact-us"
-                      icon={ArrowRight}
-                     className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-gray-950 shadow-lg transition-all duration-300 hover:bg-gray-100"
-  >
+                      className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-gray-950 shadow-lg transition-all duration-300 hover:bg-gray-100"
+                    >
                       Start my project
                       <ArrowRight size={17} />
-                    </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
