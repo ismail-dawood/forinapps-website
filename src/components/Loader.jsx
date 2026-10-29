@@ -21,17 +21,17 @@ export default function Loader({ duration = 900 }) {
       />
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Logo Container with exact public asset name */}
+        {/* Clean transparent background logo container */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/20 border border-blue-500/30 shadow-lg p-2"
+          className="flex h-16 w-16 items-center justify-center"
         >
           <img 
             src="/Favicon.png" 
             alt="Brandflip" 
-            className="h-full w-full object-contain"
+            className="h-full w-full object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.3)]"
           />
         </motion.div>
 
