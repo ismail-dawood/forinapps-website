@@ -1,4 +1,3 @@
-
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, MessagesSquare, ArrowUpRight } from 'lucide-react'
@@ -9,63 +8,57 @@ import Button from './ui/Button.jsx'
 /**
  * FaqAccordion
  * ---------------------------------------------------------------------------
- * FAQ section
- *
- * - Left content stays in normal document flow
- * - No sticky positioning, preventing layout jerks near the footer
- * - FAQ entrance animation runs only once
- * - Accordion opens/closes smoothly
- * - Opening an FAQ does not retrigger the entrance animation
+ * FAQ section (Dark Theme Fixed)
  */
 export default function FaqAccordion() {
   const [open, setOpen] = useState(0)
 
   return (
     <section
-      className="section-pad relative overflow-hidden"
+      className="section-pad relative overflow-hidden bg-[#0A0D14] text-white"
       id="faq"
     >
       {/* Background glow */}
       <div
         aria-hidden="true"
-        className="absolute top-1/3 -left-40 h-[380px] w-[380px] rounded-full bg-primary-200/25 blur-[110px]"
+        className="absolute top-1/3 -left-40 h-[380px] w-[380px] rounded-full bg-blue-600/10 blur-[110px]"
       />
 
-      <div className="container-app relative grid grid-cols-1 items-start gap-12 md:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+      <div className="container-app relative grid grid-cols-1 items-start gap-12 md:grid-cols-[0.85fr_1.15fr] lg:gap-16 mx-auto px-4 max-w-7xl">
 
         {/* ============================================================= */}
         {/* LEFT — INTRO + CONTACT                                        */}
         {/* ============================================================= */}
 
         <FadeIn>
-          <span className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.35em] text-primary-500">
+          <span className="flex items-center gap-2 text-md font-bold uppercase tracking-[0.35em] text-blue-500">
             <MessagesSquare size={15} />
             FAQ&apos;s
           </span>
 
-          <h2 className="text-3xl font-bold leading-tight md:text-[42px]">
+          <h2 className="text-3xl font-bold leading-tight md:text-[42px] text-white">
             Got questions?
             <br className="hidden md:block" />
             We got answers
           </h2>
 
-          <p className="mt-4 max-w-sm text-[15.5px] leading-relaxed text-gray-warm">
+          <p className="mt-4 max-w-sm text-[15.5px] leading-relaxed text-gray-400">
             Can&apos;t find what you&apos;re looking for? Reach out and our
             team will get back to you within a day.
           </p>
 
           {/* Contact card */}
-          <div className="relative mt-8 overflow-hidden rounded-2xl bg-primary-500 p-6 text-white">
+          <div className="relative mt-8 overflow-hidden rounded-2xl bg-blue-600 p-6 text-white shadow-xl">
             <div
               aria-hidden="true"
-              className="absolute -right-10 -top-10 h-32 w-32 animate-pulse-glow rounded-full bg-primary-500/30 blur-2xl"
+              className="absolute -right-10 -top-10 h-32 w-32 animate-pulse-glow rounded-full bg-blue-400/20 blur-2xl"
             />
 
-            <p className="relative font-display text-[15px] font-semibold">
+            <p className="relative font-display text-[15px] font-semibold text-white">
               Still have questions?
             </p>
 
-            <p className="relative mt-1.5 text-[13.5px] text-white/60">
+            <p className="relative mt-1.5 text-[13.5px] text-blue-100">
               Talk to our team directly, no bots involved.
             </p>
 
@@ -73,7 +66,7 @@ export default function FaqAccordion() {
               to="/contact-us"
               size="sm"
               icon={ArrowUpRight}
-              className="relative mt-5 !bg-white !text-ink hover:!bg-primary-50"
+              className="relative mt-5 !bg-white !text-gray-900 hover:!bg-gray-100"
             >
               Contact us
             </Button>
@@ -111,8 +104,8 @@ export default function FaqAccordion() {
                 }}
                 className={`relative overflow-hidden rounded-2xl border transition-colors duration-300 ${
                   isOpen
-                    ? 'border-primary-500 bg-primary-50/40 shadow-card'
-                    : 'border-border bg-white hover:border-primary-200'
+                    ? 'border-blue-600 bg-[#121824] shadow-2xl'
+                    : 'border-gray-800 bg-[#121824] hover:border-gray-700'
                 }`}
               >
                 {/* Question */}
@@ -125,15 +118,15 @@ export default function FaqAccordion() {
                   <span
                     className={`flex-shrink-0 font-display text-xs font-bold transition-colors duration-300 ${
                       isOpen
-                        ? 'text-primary-500'
-                        : 'text-gray-light'
+                        ? 'text-blue-500'
+                        : 'text-gray-500'
                     }`}
                   >
                     0{i + 1}
                   </span>
 
-                  {/* Question */}
-                  <span className="flex-1 font-display text-[16px] font-semibold">
+                  {/* Question Text */}
+                  <span className="flex-1 font-display text-[16px] font-semibold text-white">
                     {f.q}
                   </span>
 
@@ -143,10 +136,10 @@ export default function FaqAccordion() {
                       rotate: isOpen ? 135 : 0,
                       backgroundColor: isOpen
                         ? '#2563EB'
-                        : '#EFF6FF',
+                        : '#1E293B',
                       color: isOpen
                         ? '#FFFFFF'
-                        : '#2563EB',
+                        : '#60A5FA',
                     }}
                     transition={{
                       duration: 0.25,
@@ -186,7 +179,7 @@ export default function FaqAccordion() {
                       }}
                       className="overflow-hidden"
                     >
-                      <p className="px-6 pb-6 pl-[3.25rem] text-[14.5px] leading-relaxed text-gray-warm">
+                      <p className="px-6 pb-6 pl-[3.25rem] text-[14.5px] leading-relaxed text-gray-300">
                         {f.a}
                       </p>
                     </motion.div>
@@ -201,4 +194,3 @@ export default function FaqAccordion() {
     </section>
   )
 }
-
