@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
-/**
- * Purely presentational loader with Brandflip logo from public folder.
- */
 export default function Loader({ duration = 900 }) {
   const [progress, setProgress] = useState(6)
 
@@ -24,17 +21,20 @@ export default function Loader({ duration = 900 }) {
       />
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Logo Image */}
+        {/* Logo container with fallback to prevent broken image icon */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex h-16 w-16 items-center justify-center"
+          className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/20 border border-blue-500/30 shadow-lg"
         >
           <img 
             src="/favicon.png" 
-            alt="Brandflip Logo" 
-            className="h-full w-full object-contain drop-shadow-[0_0_15px_rgba(37,99,235,0.4)]" 
+            alt="Brandflip" 
+            className="h-10 w-10 object-contain"
+            onError={(e) => {
+              e.target.style.display = 'none'; // Agar image na mile toh hidden ho jaye
+            }}
           />
         </motion.div>
 
@@ -44,7 +44,7 @@ export default function Loader({ duration = 900 }) {
           transition={{ duration: 0.4, delay: 0.15 }}
           className="mt-5 text-base font-display font-bold tracking-wide text-white"
         >
-          Brand Flip
+          Brand<span className="text-blue-500">flip</span>
         </motion.p>
 
         <div className="mt-7 h-[3px] w-44 overflow-hidden rounded-full bg-gray-800">
