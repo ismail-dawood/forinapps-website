@@ -7,30 +7,30 @@ export default {
     extend: {
       colors: {
         primary: {
-          50: '#FFF6EC',  //50: '#FFF3EC',
-          100: '#DBEAFE', //100: '#FFE9DD',
-          200: '#BFDBFE', //200: '#FFD0B3'
-          300: '#93C5FD', //300: '#FFAD7A',
-          400: '#60A5FA', //400: '#FF7F42',
-          500: '#2563EB', //500: '#FF5A1F',
-          600: '#1D4ED8', //600: '#E24913',
-          700: '#1E40AF', //700: '#C23D0C',
-          800: '#1E3A8A', //800: '#9C330D',
-          900: '#172554', //900: '#7E2C0F',
+          50: '#EFF6FF',
+          100: '#DBEAFE',
+          200: '#BFDBFE',
+          300: '#93C5FD',
+          400: '#60A5FA',
+          500: '#2563EB', // Brandflip Electric Blue Accent
+          600: '#1D4ED8',
+          700: '#1E40AF',
+          800: '#1E3A8A',
+          900: '#172554',
         },
         ink: {
-          DEFAULT: '#111827',  // DEFAULT: '#17130F',
-          soft: '#423A34',
+          DEFAULT: '#FFFFFF', // White for main text
+          soft: '#9CA3AF',    // Muted Gray text
         },
         gray: {
-          warm: '#6F675F',
-          light: '#A79E95',
+          warm: '#9CA3AF',
+          light: '#374151',
         },
         bg: {
-          DEFAULT: '#FFFDFB',
-          alt: '#FBF4EE',
+          DEFAULT: '#0A0D14', // Main pure dark / black background
+          alt: '#121824',     // Dark Card / Section background
         },
-        border: '#EFE6DC',
+        border: '#1F293D',    // Dark border color
       },
       fontFamily: {
         display: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
@@ -41,31 +41,30 @@ export default {
         '2xl': '24px',
       },
       boxShadow: {
-        soft: '0 2px 8px rgba(23, 19, 15, 0.06)',
-        card: '0 8px 24px rgba(23, 19, 15, 0.08)',
-        glow: '0 20px 48px rgba(226, 73, 19, 0.16)',
+        soft: '0 2px 8px rgba(0, 0, 0, 0.4)',
+        card: '0 8px 24px rgba(0, 0, 0, 0.5)',
+        glow: '0 20px 48px rgba(37, 99, 235, 0.25)', // Blue glow effect
       },
       maxWidth: {
         container: '1200px',
       },
       keyframes: {
         marquee: {
-    '0%': {
-      transform: 'translate3d(0, 0, 0)',
-    },
-    '100%': {
-      transform: 'translate3d(-50%, 0, 0)',
-    },
-  },
-
-  'marquee-reverse': {
-    '0%': {
-      transform: 'translate3d(-50%, 0, 0)',
-    },
-    '100%': {
-      transform: 'translate3d(0, 0, 0)',
-    },
-  },
+          '0%': {
+            transform: 'translate3d(0, 0, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(-50%, 0, 0)',
+          },
+        },
+        'marquee-reverse': {
+          '0%': {
+            transform: 'translate3d(-50%, 0, 0)',
+          },
+          '100%': {
+            transform: 'translate3d(0, 0, 0)',
+          },
+        },
         float: {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
           '50%': { transform: 'translateY(-16px) rotate(1deg)' },
