@@ -7,7 +7,6 @@ import WhyChooseUs from '../components/WhyChooseUs.jsx'
 import ProcessSteps from '../components/ProcessSteps.jsx'
 import OurTeam from '../components/OurTeam.jsx'
 
-
 const stats = [
   { value: '150+', label: 'Projects delivered' },
   { value: '60+', label: 'Happy clients worldwide' },
@@ -25,40 +24,29 @@ export default function AboutUs() {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4 }}>
       <PageHero
-        
         title="We build software the way we'd want it built for us"
         subtitle="ForinApps is a software development studio helping businesses launch websites, web apps, and mobile apps that actually move the needle."
         crumbs={[{ label: 'About us' }]}
       />
 
-      {/* <section className="section-pad pt-0">
-        <div className="container-app">
-          <Stagger className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((s) => (
-              <motion.div key={s.label} variants={staggerItem} className="text-center p-8 rounded-2xl border border-border bg-white">
-                <p className="font-display text-3xl md:text-4xl font-extrabold text-primary-600">{s.value}</p>
-                <p className="mt-2 text-sm text-gray-warm">{s.label}</p>
-              </motion.div>
-            ))}
-          </Stagger>
-        </div>
-      </section> */}
-
       <section className="section-pad pt-0">
         <div className="container-app">
           <FadeIn className="max-w-xl mx-auto text-center mb-14">
-        
-            <h2 className="text-3xl md:text-[42px] font-bold">The values behind every project</h2>
+            <h2 className="text-3xl md:text-[42px] font-bold text-white">The values behind every project</h2>
           </FadeIn>
 
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {values.map((v) => (
-              <motion.div key={v.title} variants={staggerItem} className="p-8 rounded-2xl border border-border bg-white">
-                <div className="grid place-items-center w-12 h-12 rounded-xl bg-primary-100 text-primary-700 mb-5">
+              <motion.div 
+                key={v.title} 
+                variants={staggerItem} 
+                className="p-8 rounded-2xl border border-border bg-bg-alt shadow-card"
+              >
+                <div className="grid place-items-center w-12 h-12 rounded-xl bg-primary-900/50 text-primary-400 mb-5 border border-primary-700/30">
                   <v.icon size={22} />
                 </div>
-                <h3 className="text-lg font-bold">{v.title}</h3>
-                <p className="mt-2.5 text-sm text-gray-warm leading-relaxed">{v.desc}</p>
+                <h3 className="text-lg font-bold text-white">{v.title}</h3>
+                <p className="mt-2.5 text-sm text-ink-soft leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </Stagger>
