@@ -1,4 +1,3 @@
-
 import { useParams, Navigate, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
@@ -33,7 +32,7 @@ export default function ServiceDetail() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="bg-white"
+      className="bg-[#0A0D14] text-white min-h-screen"
     >
       {/* =========================================================
           HERO
@@ -52,12 +51,12 @@ export default function ServiceDetail() {
           MAIN CONTENT
       ========================================================= */}
 
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-[#0A0D14] text-white">
         {/* Decorative background */}
-        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-orange-100/40 blur-3xl" />
-        <div className="pointer-events-none absolute -right-40 top-[45%] h-96 w-96 rounded-full bg-primary-50/60 blur-3xl" />
+        <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
+        <div className="pointer-events-none absolute -right-40 top-[45%] h-96 w-96 rounded-full bg-blue-900/10 blur-3xl" />
 
-        <div className="container-app relative py-16 sm:py-20 lg:py-24">
+        <div className="container-app relative py-16 sm:py-20 lg:py-24 mx-auto px-4 max-w-7xl">
 
           {/* =====================================================
               HERO IMAGE + INTRO
@@ -67,7 +66,7 @@ export default function ServiceDetail() {
             <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
 
               {/* Image */}
-              <div className="group relative overflow-hidden rounded-3xl border border-gray-200 bg-gray-100 shadow-xl shadow-gray-200/40">
+              <div className="group relative overflow-hidden rounded-3xl border border-gray-800 bg-[#121824] shadow-2xl">
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
                     src={service.heroImage}
@@ -86,30 +85,27 @@ export default function ServiceDetail() {
                 </div>
 
                 {/* Image overlay */}
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-
-             
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
 
               {/* Intro */}
               <div>
-              
-
-                <h2 className="text-3xl font-bold leading-tight tracking-tight text-gray-950 sm:text-4xl">
+                <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
                   Built around your
-                  <span className="block text-primary-500">
+                  <span className="block text-blue-500">
                     business goals.
                   </span>
                 </h2>
 
-                <p className="mt-5 text-base leading-7 text-gray-500 sm:text-lg sm:leading-8">
+                <p className="mt-5 text-base leading-7 text-gray-400 sm:text-lg sm:leading-8">
                   {service.desc}
                 </p>
 
-                <div className="mt-7   flex flex-wrap gap-3">
+                <div className="mt-7 flex flex-wrap gap-3">
                   <Button
                     to="/contact-us"
                     icon={ArrowRight}
+                    className="bg-blue-600 text-white hover:bg-blue-700"
                   >
                     Start my project
                   </Button>
@@ -122,17 +118,18 @@ export default function ServiceDetail() {
                       gap-2
                       rounded-xl
                       border
-                      border-gray-200
+                      border-gray-800
+                      bg-[#121824]
                       px-5
                       py-3
                       text-sm
                       font-semibold
-                      text-gray-800
+                      text-white
                       transition-all
                       duration-200
-                      hover:border-primary-200
-                      hover:bg-primary-50
-                      hover:text-primary-600
+                      hover:border-blue-500/50
+                      hover:bg-gray-800
+                      hover:text-blue-400
                     "
                   >
                     Explore service
@@ -153,17 +150,17 @@ export default function ServiceDetail() {
           >
             <FadeIn>
               <div className="mb-10 max-w-3xl">
-                <div className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-primary-500">
+                <div className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-blue-500">
                   <Layers3 size={17} />
                   What's included
                 </div>
 
-                <h2 className="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
                   Everything you need to
-                  <span className="text-primary-500"> get it shipped.</span>
+                  <span className="text-blue-500"> get it shipped.</span>
                 </h2>
 
-                <p className="mt-4 text-base leading-7 text-gray-500 sm:text-lg">
+                <p className="mt-4 text-base leading-7 text-gray-400 sm:text-lg">
                   {service.included?.description ||
                     `Our ${service.title.toLowerCase()} process covers everything needed to launch a reliable, high-quality product.`}
                 </p>
@@ -185,20 +182,18 @@ export default function ServiceDetail() {
                     overflow-hidden
                     rounded-2xl
                     border
-                    border-gray-200
-                    bg-white
+                    border-gray-800
+                    bg-[#121824]
                     p-6
-                    shadow-sm
+                    shadow-xl
                     transition-all
                     duration-300
                     hover:-translate-y-1
-                    hover:border-primary-200
-                    hover:shadow-xl
-                    hover:shadow-orange-100/40
+                    hover:border-blue-500/50
+                    hover:shadow-2xl
                     sm:p-7
                   "
                 >
-                  {/* Number */}
                   <div className="flex items-start justify-between">
                     <div
                       className="
@@ -207,33 +202,35 @@ export default function ServiceDetail() {
                         w-11
                         place-items-center
                         rounded-xl
-                        bg-primary-50
-                        text-primary-500
+                        bg-blue-600/10
+                        border
+                        border-blue-500/30
+                        text-blue-500
                         transition-all
                         duration-300
-                        group-hover:bg-primary-500
+                        group-hover:bg-blue-600
                         group-hover:text-white
                       "
                     >
                       <CheckCircle2 size={21} />
                     </div>
 
-                    <span className="text-xs font-bold text-gray-300">
+                    <span className="text-xs font-bold text-gray-500">
                       {String(index + 1).padStart(2, '0')}
                     </span>
                   </div>
 
                   {typeof feature === 'string' ? (
-                    <p className="mt-5 text-[15px] font-semibold leading-6 text-gray-900">
+                    <p className="mt-5 text-[15px] font-semibold leading-6 text-white">
                       {feature}
                     </p>
                   ) : (
                     <>
-                      <h3 className="mt-5 text-lg font-bold leading-6 text-gray-950">
+                      <h3 className="mt-5 text-lg font-bold leading-6 text-white">
                         {feature.title}
                       </h3>
 
-                      <p className="mt-3 text-sm leading-6 text-gray-500">
+                      <p className="mt-3 text-sm leading-6 text-gray-400">
                         {feature.description}
                       </p>
                     </>
@@ -247,7 +244,7 @@ export default function ServiceDetail() {
                       left-0
                       h-0.5
                       w-0
-                      bg-primary-500
+                      bg-blue-600
                       transition-all
                       duration-300
                       group-hover:w-full
@@ -269,30 +266,31 @@ export default function ServiceDetail() {
                   overflow-hidden
                   rounded-3xl
                   border
-                  border-gray-200
-                  bg-gray-50/70
+                  border-gray-800
+                  bg-[#121824]
                   p-6
                   sm:p-9
                   lg:p-12
+                  shadow-2xl
                 "
               >
                 <div className="grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
 
                   {/* Technology intro */}
                   <div>
-                    <div className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-primary-500">
+                    <div className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.14em] text-blue-500">
                       <Layers3 size={17} />
                       {service.technology?.title || 'Technology we use'}
                     </div>
 
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-950 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                       The right tools for
-                      <span className="block text-primary-500">
+                      <span className="block text-blue-500">
                         the right product.
                       </span>
                     </h2>
 
-                    <p className="mt-4 text-sm leading-7 text-gray-500 sm:text-base">
+                    <p className="mt-4 text-sm leading-7 text-gray-400 sm:text-base">
                       {service.technology?.description ||
                         'We choose modern, production-proven technologies based on your product requirements.'}
                     </p>
@@ -300,7 +298,7 @@ export default function ServiceDetail() {
 
                   {/* Technology categories */}
                   <div>
-                    <p className="mb-5 text-sm font-semibold text-gray-700">
+                    <p className="mb-5 text-sm font-semibold text-gray-300">
                       {service.technology?.subtitle ||
                         'Tools and frameworks powering this service'}
                     </p>
@@ -312,16 +310,16 @@ export default function ServiceDetail() {
                           className="
                             rounded-2xl
                             border
-                            border-gray-200
-                            bg-white
+                            border-gray-800
+                            bg-[#0A0D14]
                             p-5
                             transition-all
                             duration-300
-                            hover:border-primary-200
-                            hover:shadow-md
+                            hover:border-blue-500/50
+                            hover:shadow-lg
                           "
                         >
-                          <h3 className="text-sm font-bold text-gray-950">
+                          <h3 className="text-sm font-bold text-white">
                             {category.title}
                           </h3>
 
@@ -331,12 +329,14 @@ export default function ServiceDetail() {
                                 key={technology}
                                 className="
                                   rounded-lg
-                                  bg-primary-50
+                                  bg-blue-600/10
+                                  border
+                                  border-blue-500/20
                                   px-2.5
                                   py-1.5
                                   text-xs
                                   font-semibold
-                                  text-primary-700
+                                  text-blue-400
                                 "
                               >
                                 {technology}
@@ -351,8 +351,8 @@ export default function ServiceDetail() {
 
                 {/* Technology closing text */}
                 {service.technology?.closingText && (
-                  <div className="mt-9 border-t border-gray-200 pt-7">
-                    <p className="max-w-4xl text-sm leading-7 text-gray-500 sm:text-base">
+                  <div className="mt-9 border-t border-gray-800 pt-7">
+                    <p className="max-w-4xl text-sm leading-7 text-gray-400 sm:text-base">
                       {service.technology.closingText}
                     </p>
                   </div>
@@ -375,29 +375,30 @@ export default function ServiceDetail() {
                   h-full
                   overflow-hidden
                   rounded-3xl
-                  bg-orange-500
+                  bg-blue-600
                   p-7
                   sm:p-9
                   lg:p-10
+                  shadow-2xl
                 "
               >
                 {/* Decorative circles */}
                 <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10 blur-2xl" />
-                <div className="pointer-events-none absolute -bottom-28 -left-20 h-64 w-64 rounded-full bg-black/10 blur-3xl" />
+                <div className="pointer-events-none absolute -bottom-28 -left-20 h-64 w-64 rounded-full bg-black/20 blur-3xl" />
 
                 <div className="relative z-10">
-                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-white/80">
+                  <span className="text-xs font-bold uppercase tracking-[0.14em] text-blue-100">
                     Ready to get started?
                   </span>
 
                   <h2 className="mt-4 max-w-xl text-3xl font-bold leading-tight text-white sm:text-4xl">
                     Let's build something
-                    <span className="block text-white">
+                    <span className="block text-blue-100">
                       that moves your business forward.
                     </span>
                   </h2>
 
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/80 sm:text-base">
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-blue-50 sm:text-base">
                     Tell us about your idea, requirements, and goals.
                     We'll help you figure out the right approach.
                   </p>
@@ -406,7 +407,7 @@ export default function ServiceDetail() {
                     <Button
                       to="/contact-us"
                       icon={ArrowRight}
-                      className="bg-white text-black hover:text-primary-600 hover:bg-white"
+                      className="bg-white text-gray-900 hover:bg-gray-100"
                     >
                       Start my project
                     </Button>
@@ -417,12 +418,12 @@ export default function ServiceDetail() {
 
             {/* Other services */}
             <FadeIn delay={0.1}>
-              <div className="h-full rounded-3xl border border-gray-200 bg-white p-6 shadow-sm sm:p-7">
+              <div className="h-full rounded-3xl border border-gray-800 bg-[#121824] p-6 shadow-2xl sm:p-7">
                 <p className="text-xs font-bold uppercase tracking-[0.14em] text-gray-400">
                   Explore more
                 </p>
 
-                <h3 className="mt-2 text-xl font-bold text-gray-950">
+                <h3 className="mt-2 text-xl font-bold text-white">
                   Other services
                 </h3>
 
@@ -442,8 +443,8 @@ export default function ServiceDetail() {
                         p-3
                         transition-all
                         duration-200
-                        hover:border-primary-100
-                        hover:bg-primary-50
+                        hover:border-blue-500/30
+                        hover:bg-gray-800/60
                       "
                     >
                       <span
@@ -454,10 +455,12 @@ export default function ServiceDetail() {
                           flex-shrink-0
                           place-items-center
                           rounded-xl
-                          bg-primary-50
-                          text-primary-500
+                          bg-blue-600/10
+                          border
+                          border-blue-500/30
+                          text-blue-500
                           transition-colors
-                          group-hover:bg-primary-500
+                          group-hover:bg-blue-600
                           group-hover:text-white
                         "
                       >
@@ -465,11 +468,11 @@ export default function ServiceDetail() {
                       </span>
 
                       <span className="min-w-0 flex-1">
-                        <span className="block text-sm font-bold text-gray-900">
+                        <span className="block text-sm font-bold text-white">
                           {other.title}
                         </span>
 
-                        <span className="mt-0.5 block truncate text-xs text-gray-500">
+                        <span className="mt-0.5 block truncate text-xs text-gray-400">
                           {other.short}
                         </span>
                       </span>
@@ -478,11 +481,11 @@ export default function ServiceDetail() {
                         size={17}
                         className="
                           flex-shrink-0
-                          text-gray-300
+                          text-gray-500
                           transition-all
                           duration-200
                           group-hover:translate-x-1
-                          group-hover:text-primary-500
+                          group-hover:text-blue-400
                         "
                       />
                     </Link>
@@ -508,4 +511,3 @@ export default function ServiceDetail() {
     </motion.div>
   )
 }
-
