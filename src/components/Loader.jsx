@@ -21,20 +21,17 @@ export default function Loader({ duration = 900 }) {
       />
 
       <div className="relative z-10 flex flex-col items-center">
-        {/* Logo container with fallback to prevent broken image icon */}
+        {/* Logo Container with exact public asset name */}
         <motion.div
           initial={{ opacity: 0, scale: 0.7 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/20 border border-blue-500/30 shadow-lg"
+          className="flex h-16 w-16 items-center justify-center rounded-2xl bg-blue-600/20 border border-blue-500/30 shadow-lg p-2"
         >
           <img 
-            src="/favicon.png" 
+            src="/Favicon.png" 
             alt="Brandflip" 
-            className="h-10 w-10 object-contain"
-            onError={(e) => {
-              e.target.style.display = 'none'; // Agar image na mile toh hidden ho jaye
-            }}
+            className="h-full w-full object-contain"
           />
         </motion.div>
 
