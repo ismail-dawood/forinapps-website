@@ -150,13 +150,13 @@ export default function ContactUs() {
             <FadeIn>
               <div>
                 <span className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-500">
-                  Free Consultation
+                  Project Consultation
                 </span>
                 <h2 className="mt-3 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                  Let&apos;s discuss your <span className="text-blue-500">project</span>
+                  Let&apos;s Find a Time <span className="text-blue-500">to Talk</span>
                 </h2>
                 <p className="mt-4 text-base leading-7 text-gray-400 sm:text-lg">
-                  Book a free consultation and let&apos;s talk about your project, requirements, goals, and the best way to move forward.
+                  Choose an available consultation time to discuss your project requirements with the BrandFlip team.
                 </p>
 
                 <div className="mt-8 space-y-6">
@@ -175,7 +175,7 @@ export default function ContactUs() {
                       <Clock size={22} />
                     </div>
                     <div>
-                      <h3 className="text-base font-bold text-white">Select your time</h3>
+                      <h3 className="text-base font-bold text-white">Select a time</h3>
                       <p className="mt-1 text-sm text-gray-400">Choose the time that works best for you.</p>
                     </div>
                   </div>
