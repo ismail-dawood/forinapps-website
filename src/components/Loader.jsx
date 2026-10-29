@@ -35,7 +35,7 @@ export default function Loader({ duration = 900 }) {
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-400 via-primary-500 to-primary-700 shadow-glow"
         >
-          <span className="text-xl font-display font-extrabold text-white">BrandFlip</span>
+          <span className="text-xl font-display font-extrabold text-white">BF</span>
         </motion.div>
 
         <motion.p
@@ -44,7 +44,7 @@ export default function Loader({ duration = 900 }) {
           transition={{ duration: 0.4, delay: 0.15 }}
           className="mt-5 text-[15px] font-display font-bold tracking-wide text-ink"
         >
-          Brand-Flip
+          Brand Flip
         </motion.p>
 
         <div className="mt-7 h-[3px] w-44 overflow-hidden rounded-full bg-primary-100">
