@@ -24,14 +24,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email us',
-    value: 'info@forinapps.com',
-    href: 'mailto:info@forinapps.com',
+    value: 'info@brandflip.tech',
+    href: 'mailto:info@brandflip.tech',
   },
   {
     icon: MessageCircle,
     label: 'Chat with us',
-    value: '+60 14 6113485',
-    href: 'https://wa.me/60146113485',
+    value: '+92 335 2551969',
+    href: 'https://wa.me/03352551969',
   },
 ]
 
@@ -409,12 +409,12 @@ export default function ContactUs() {
 
                 <div className="relative z-10 flex h-full flex-col">
                   <span className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-100">
-                    Get in touch
+                    Get in touch with BrandFlip
                   </span>
                   <h3 className="mt-4 text-3xl font-bold leading-tight sm:text-4xl text-white">
-                    We&apos;re here to
+                    Let&apos;s Discuss Your Next 
                     <span className="block text-blue-100">
-                      help you.
+                      Digital Project.
                     </span>
                   </h3>
                   <p className="mt-5 max-w-md text-sm leading-7 text-blue-50 sm:text-base">
