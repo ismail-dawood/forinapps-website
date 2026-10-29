@@ -1,4 +1,3 @@
-
 import { projects } from '../data/portfolio.js'
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
@@ -186,11 +185,13 @@ export default function HomePortfolio() {
         relative
         min-h-[150vh]
         pb-32
+        bg-[#0A0D14]
+        text-white
       "
     >
       {/* =====================================================
           STICKY HEADING
-      ===================================================== */}
+      ========================================================= */}
 
       <div
         className="
@@ -210,12 +211,12 @@ export default function HomePortfolio() {
           className="
             rounded-2xl
             border
-            border-white/20
-            bg-white/10
+            border-blue-500/30
+            bg-[#121824]/80
             px-5
             py-3
-            shadow-[0_0_50px_rgba(249,115,22,.30)]
-            backdrop-blur-sm
+            shadow-[0_0_50px_rgba(37,99,235,0.35)]
+            backdrop-blur-md
 
             sm:rounded-3xl
             sm:px-8
@@ -230,6 +231,7 @@ export default function HomePortfolio() {
               text-3xl
               font-bold
               leading-tight
+              text-white
 
               sm:text-5xl
 
@@ -243,7 +245,7 @@ export default function HomePortfolio() {
 
       {/* =====================================================
           PROJECTS
-      ===================================================== */}
+      ========================================================= */}
 
       <div
         className="
@@ -252,6 +254,8 @@ export default function HomePortfolio() {
           z-20
           -mt-[70vh]
           px-3
+          mx-auto
+          max-w-7xl
 
           sm:px-4
         "
@@ -277,6 +281,9 @@ export default function HomePortfolio() {
                 aspect-[3/4]
                 overflow-hidden
                 rounded-xl
+                border
+                border-gray-800
+                bg-[#121824]
                 shadow-xl
                 will-change-transform
 
@@ -307,4 +314,3 @@ export default function HomePortfolio() {
     </section>
   )
 }
-
